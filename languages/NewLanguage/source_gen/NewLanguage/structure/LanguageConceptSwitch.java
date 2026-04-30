@@ -13,12 +13,13 @@ public final class LanguageConceptSwitch {
   public static final int Event = 1;
   public static final int FoulEvent = 2;
   public static final int GoalEvent = 3;
-  public static final int Match = 4;
-  public static final int OffsideEvent = 5;
-  public static final int PeriodEvent = 6;
-  public static final int Player = 7;
-  public static final int SubstitutionEvent = 8;
-  public static final int Team = 9;
+  public static final int League = 4;
+  public static final int Match = 5;
+  public static final int OffsideEvent = 6;
+  public static final int PeriodEvent = 7;
+  public static final int Player = 8;
+  public static final int SubstitutionEvent = 9;
+  public static final int Team = 10;
 
   public LanguageConceptSwitch() {
     LanguageConceptIndexBuilder builder = new LanguageConceptIndexBuilder(0x6f6e896b7f4e4a19L, 0xa67ba97c3b6db988L);
@@ -26,6 +27,7 @@ public final class LanguageConceptSwitch {
     builder.put(0x3dd882b35766f44eL, Event);
     builder.put(0x3dd882b35766f473L, FoulEvent);
     builder.put(0x3dd882b35766f45bL, GoalEvent);
+    builder.put(0x641a60953b5b8decL, League);
     builder.put(0x3dd882b35766f42cL, Match);
     builder.put(0x3dd882b35766f478L, OffsideEvent);
     builder.put(0x3dd882b35766f46eL, PeriodEvent);

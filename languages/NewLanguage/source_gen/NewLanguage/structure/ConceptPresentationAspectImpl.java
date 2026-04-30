@@ -13,6 +13,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private ConceptPresentation props_Event;
   private ConceptPresentation props_FoulEvent;
   private ConceptPresentation props_GoalEvent;
+  private ConceptPresentation props_League;
   private ConceptPresentation props_Match;
   private ConceptPresentation props_OffsideEvent;
   private ConceptPresentation props_PeriodEvent;
@@ -52,6 +53,13 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_GoalEvent = cpb.create();
         }
         return props_GoalEvent;
+      case LanguageConceptSwitch.League:
+        if (props_League == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("League");
+          props_League = cpb.create();
+        }
+        return props_League;
       case LanguageConceptSwitch.Match:
         if (props_Match == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();

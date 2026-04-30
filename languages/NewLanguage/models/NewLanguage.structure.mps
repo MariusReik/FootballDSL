@@ -135,26 +135,24 @@
       <property role="TrG5h" value="venue" />
       <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
     </node>
-    <node concept="1TJgyj" id="3RowFdnpJgQ" role="1TKVEi">
-      <property role="IQ2ns" value="4456455538060227638" />
-      <property role="20lmBu" value="fLJjDmT/aggregation" />
-      <property role="20kJfa" value="homeTeam" />
-      <property role="20lbJX" value="fLJekj4/_1" />
-      <ref role="20lvS9" node="3RowFdnpJgH" resolve="Team" />
-    </node>
-    <node concept="1TJgyj" id="3RowFdnpJgS" role="1TKVEi">
-      <property role="IQ2ns" value="4456455538060227640" />
-      <property role="20lmBu" value="fLJjDmT/aggregation" />
-      <property role="20kJfa" value="awayTeam" />
-      <property role="20lbJX" value="fLJekj4/_1" />
-      <ref role="20lvS9" node="3RowFdnpJgH" resolve="Team" />
-    </node>
     <node concept="1TJgyj" id="3RowFdnpJgU" role="1TKVEi">
       <property role="IQ2ns" value="4456455538060227642" />
       <property role="20lmBu" value="fLJjDmT/aggregation" />
       <property role="20kJfa" value="events" />
       <property role="20lbJX" value="fLJekj5/_0__n" />
       <ref role="20lvS9" node="3RowFdnpJhe" resolve="Event" />
+    </node>
+    <node concept="1TJgyj" id="6gqo9kVmSRP" role="1TKVEi">
+      <property role="IQ2ns" value="7213183947249520117" />
+      <property role="20kJfa" value="homeTeam" />
+      <property role="20lbJX" value="fLJekj4/_1" />
+      <ref role="20lvS9" node="3RowFdnpJgH" resolve="Team" />
+    </node>
+    <node concept="1TJgyj" id="6gqo9kVmSRR" role="1TKVEi">
+      <property role="IQ2ns" value="7213183947249520119" />
+      <property role="20kJfa" value="awayTeam" />
+      <property role="20lbJX" value="fLJekj4/_1" />
+      <ref role="20lvS9" node="3RowFdnpJgH" resolve="Team" />
     </node>
   </node>
   <node concept="1TIwiD" id="3RowFdnpJgH">
@@ -291,6 +289,23 @@
       <property role="20kJfa" value="playerIn" />
       <property role="20lbJX" value="fLJekj4/_1" />
       <ref role="20lvS9" node="3RowFdnpJgJ" resolve="Player" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="6gqo9kVmSRG">
+    <property role="EcuMT" value="7213183947249520108" />
+    <property role="TrG5h" value="League" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyi" id="6gqo9kVmSRI" role="1TKVEl">
+      <property role="IQ2nx" value="7213183947249520110" />
+      <property role="TrG5h" value="season" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
+    </node>
+    <node concept="1TJgyj" id="6gqo9kVmSRN" role="1TKVEi">
+      <property role="IQ2ns" value="7213183947249520115" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="Teams" />
+      <property role="20lbJX" value="fLJekj6/_1__n" />
+      <ref role="20lvS9" node="3RowFdnpJgH" resolve="Team" />
     </node>
   </node>
 </model>

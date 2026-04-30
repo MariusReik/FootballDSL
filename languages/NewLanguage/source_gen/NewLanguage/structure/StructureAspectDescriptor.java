@@ -20,6 +20,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptEvent = createDescriptorForEvent();
   /*package*/ final ConceptDescriptor myConceptFoulEvent = createDescriptorForFoulEvent();
   /*package*/ final ConceptDescriptor myConceptGoalEvent = createDescriptorForGoalEvent();
+  /*package*/ final ConceptDescriptor myConceptLeague = createDescriptorForLeague();
   /*package*/ final ConceptDescriptor myConceptMatch = createDescriptorForMatch();
   /*package*/ final ConceptDescriptor myConceptOffsideEvent = createDescriptorForOffsideEvent();
   /*package*/ final ConceptDescriptor myConceptPeriodEvent = createDescriptorForPeriodEvent();
@@ -43,7 +44,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptCardEvent, myConceptEvent, myConceptFoulEvent, myConceptGoalEvent, myConceptMatch, myConceptOffsideEvent, myConceptPeriodEvent, myConceptPlayer, myConceptSubstitutionEvent, myConceptTeam);
+    return Arrays.asList(myConceptCardEvent, myConceptEvent, myConceptFoulEvent, myConceptGoalEvent, myConceptLeague, myConceptMatch, myConceptOffsideEvent, myConceptPeriodEvent, myConceptPlayer, myConceptSubstitutionEvent, myConceptTeam);
   }
 
   @Override
@@ -58,6 +59,8 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
         return myConceptFoulEvent;
       case LanguageConceptSwitch.GoalEvent:
         return myConceptGoalEvent;
+      case LanguageConceptSwitch.League:
+        return myConceptLeague;
       case LanguageConceptSwitch.Match:
         return myConceptMatch;
       case LanguageConceptSwitch.OffsideEvent:
@@ -126,6 +129,15 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.associate("assistBy", 0x3dd882b35766f461L).target(0x6f6e896b7f4e4a19L, 0xa67ba97c3b6db988L, 0x3dd882b35766f42fL).optional(true).origin("4456455538060227681").done();
     return b.create();
   }
+  private static ConceptDescriptor createDescriptorForLeague() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("NewLanguage", "League", 0x6f6e896b7f4e4a19L, 0xa67ba97c3b6db988L, 0x641a60953b5b8decL);
+    b.class_(false, false, false);
+    b.origin("r:ea0e6bf2-d859-4aa5-af01-b61d56d17ba2(NewLanguage.structure)/7213183947249520108");
+    b.version(3);
+    b.property("season", 0x641a60953b5b8deeL).type(PrimitiveTypeId.STRING).origin("7213183947249520110").done();
+    b.aggregate("Teams", 0x641a60953b5b8df3L).target(0x6f6e896b7f4e4a19L, 0xa67ba97c3b6db988L, 0x3dd882b35766f42dL).optional(false).ordered(true).multiple(true).origin("7213183947249520115").done();
+    return b.create();
+  }
   private static ConceptDescriptor createDescriptorForMatch() {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("NewLanguage", "Match", 0x6f6e896b7f4e4a19L, 0xa67ba97c3b6db988L, 0x3dd882b35766f42cL);
     b.class_(false, false, false);
@@ -133,8 +145,8 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.version(3);
     b.property("date", 0x3dd882b35766f431L).type(PrimitiveTypeId.STRING).origin("4456455538060227633").done();
     b.property("venue", 0x3dd882b35766f433L).type(PrimitiveTypeId.STRING).origin("4456455538060227635").done();
-    b.aggregate("homeTeam", 0x3dd882b35766f436L).target(0x6f6e896b7f4e4a19L, 0xa67ba97c3b6db988L, 0x3dd882b35766f42dL).optional(false).ordered(true).multiple(false).origin("4456455538060227638").done();
-    b.aggregate("awayTeam", 0x3dd882b35766f438L).target(0x6f6e896b7f4e4a19L, 0xa67ba97c3b6db988L, 0x3dd882b35766f42dL).optional(false).ordered(true).multiple(false).origin("4456455538060227640").done();
+    b.associate("homeTeam", 0x641a60953b5b8df5L).target(0x6f6e896b7f4e4a19L, 0xa67ba97c3b6db988L, 0x3dd882b35766f42dL).optional(false).origin("7213183947249520117").done();
+    b.associate("awayTeam", 0x641a60953b5b8df7L).target(0x6f6e896b7f4e4a19L, 0xa67ba97c3b6db988L, 0x3dd882b35766f42dL).optional(false).origin("7213183947249520119").done();
     b.aggregate("events", 0x3dd882b35766f43aL).target(0x6f6e896b7f4e4a19L, 0xa67ba97c3b6db988L, 0x3dd882b35766f44eL).optional(true).ordered(true).multiple(true).origin("4456455538060227642").done();
     return b.create();
   }
