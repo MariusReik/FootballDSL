@@ -10,7 +10,7 @@
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1070475587102:jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
   <root>
     <file name="ConstraintsAspectDescriptor.java">
-      <unit at="15,0,32,0" name="NewLanguage.constraints.ConstraintsAspectDescriptor" />
+      <unit at="15,0,34,0" name="NewLanguage.constraints.ConstraintsAspectDescriptor" />
     </file>
   </root>
   <root nodeRef="r:9237e1bd-8fa5-4392-9eb5-0fe368c7d797(NewLanguage.constraints)/7213183947249522587">
@@ -88,6 +88,82 @@
       <unit id="7213183947249534858" at="29,0,52,0" name="NewLanguage.constraints.Event_Constraints$RD1" />
       <unit id="7213183947249522589" at="52,0,75,0" name="NewLanguage.constraints.Event_Constraints$RD2" />
       <unit id="7213183947249522587" at="22,0,88,0" name="NewLanguage.constraints.Event_Constraints" />
+    </file>
+  </root>
+  <root nodeRef="r:9237e1bd-8fa5-4392-9eb5-0fe368c7d797(NewLanguage.constraints)/799745762873998937">
+    <file name="SubstitutionEvent_Constraints.java">
+      <node id="799745762873998937" at="23,91,24,54" concept="7" />
+      <node id="799745762874014816" at="24,54,25,26" concept="1" />
+      <node id="16353830081149272065" at="25,26,26,26" concept="1" />
+      <node id="799745762874014816" at="30,54,31,57" concept="7" />
+      <node id="799745762874014816" at="38,61,39,123" concept="5" />
+      <node id="16352108452098605057" at="42,78,43,116" concept="4" />
+      <node id="16352108452098605095" at="44,30,45,24" concept="5" />
+      <node id="16352108452098605100" at="46,11,47,110" concept="5" />
+      <node id="16353830081149272065" at="53,54,54,58" concept="7" />
+      <node id="16353830081149272065" at="61,61,62,125" concept="5" />
+      <node id="16353830081149272068" at="65,78,66,116" concept="4" />
+      <node id="16353830081149272106" at="67,30,68,24" concept="5" />
+      <node id="16353830081149272111" at="69,11,70,110" concept="5" />
+      <node id="799745762873998937" at="77,0,78,0" concept="6" trace="SubstitutionEvent$eK" />
+      <node id="799745762873998937" at="78,0,79,0" concept="6" trace="Match$uM" />
+      <node id="799745762873998937" at="79,0,80,0" concept="6" trace="Player$Eq" />
+      <node id="799745762873998937" at="83,0,84,0" concept="6" trace="playerIn$dX$q" />
+      <node id="799745762873998937" at="84,0,85,0" concept="6" trace="playerOut$dXlp" />
+      <node id="799745762874014816" at="30,0,33,0" concept="0" trace="RD1#(Ljetbrains/mps/smodel/runtime/ConstraintsDescriptor;)V" />
+      <node id="16352108452098605065" at="43,116,46,11" concept="2" />
+      <node id="16353830081149272065" at="53,0,56,0" concept="0" trace="RD2#(Ljetbrains/mps/smodel/runtime/ConstraintsDescriptor;)V" />
+      <node id="16353830081149272104" at="66,116,69,11" concept="2" />
+      <node id="799745762874014816" at="37,0,41,0" concept="3" trace="getSearchScopeValidatorNode#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
+      <node id="16353830081149272065" at="60,0,64,0" concept="3" trace="getSearchScopeValidatorNode#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
+      <node id="799745762873998937" at="23,0,28,0" concept="0" trace="SubstitutionEvent_Constraints#(Ljetbrains/mps/smodel/runtime/ConstraintsDescriptorInitContext;)V" />
+      <node id="799745762874014816" at="41,0,49,0" concept="3" trace="createScope#(Ljetbrains/mps/smodel/runtime/ReferenceConstraintsContext;)Ljetbrains/mps/scope/Scope;" />
+      <node id="16353830081149272065" at="64,0,72,0" concept="3" trace="createScope#(Ljetbrains/mps/smodel/runtime/ReferenceConstraintsContext;)Ljetbrains/mps/scope/Scope;" />
+      <node id="799745762874014816" at="35,54,49,8" concept="5" />
+      <node id="16353830081149272065" at="58,54,72,8" concept="5" />
+      <node id="799745762874014816" at="33,0,51,0" concept="3" trace="getScopeProvider#()Ljetbrains/mps/smodel/runtime/ReferenceScopeProvider;" />
+      <node id="16353830081149272065" at="56,0,74,0" concept="3" trace="getScopeProvider#()Ljetbrains/mps/smodel/runtime/ReferenceScopeProvider;" />
+      <scope id="799745762874014816" at="30,54,31,57" />
+      <scope id="799745762874014816" at="38,61,39,123" />
+      <scope id="16352108452098605094" at="44,30,45,24" />
+      <scope id="16353830081149272065" at="53,54,54,58" />
+      <scope id="16353830081149272065" at="61,61,62,125" />
+      <scope id="16353830081149272105" at="67,30,68,24" />
+      <scope id="799745762873998937" at="23,91,26,26" />
+      <scope id="799745762874014816" at="30,0,33,0">
+        <var name="container" id="799745762874014816" />
+      </scope>
+      <scope id="16353830081149272065" at="53,0,56,0">
+        <var name="container" id="16353830081149272065" />
+      </scope>
+      <scope id="799745762874014816" at="37,0,41,0" />
+      <scope id="16353830081149272065" at="60,0,64,0" />
+      <scope id="799745762873998937" at="23,0,28,0">
+        <var name="initContext" id="799745762873998937" />
+      </scope>
+      <scope id="799745762874014816" at="42,78,47,110">
+        <var name="match" id="16352108452098605058" />
+      </scope>
+      <scope id="16353830081149272065" at="65,78,70,110">
+        <var name="match" id="16353830081149272069" />
+      </scope>
+      <scope id="799745762874014816" at="41,0,49,0">
+        <var name="_context" id="799745762874014816" />
+      </scope>
+      <scope id="16353830081149272065" at="64,0,72,0">
+        <var name="_context" id="16353830081149272065" />
+      </scope>
+      <scope id="799745762874014816" at="35,54,49,8" />
+      <scope id="16353830081149272065" at="58,54,72,8" />
+      <scope id="799745762874014816" at="33,0,51,0" />
+      <scope id="16353830081149272065" at="56,0,74,0" />
+      <unit id="799745762873998937" at="82,0,86,0" name="NewLanguage.constraints.SubstitutionEvent_Constraints$LINKS" />
+      <unit id="799745762873998937" at="76,0,81,0" name="NewLanguage.constraints.SubstitutionEvent_Constraints$CONCEPTS" />
+      <unit id="799745762874014816" at="36,17,49,7" name="NewLanguage.constraints.SubstitutionEvent_Constraints$RD1$1" />
+      <unit id="16353830081149272065" at="59,17,72,7" name="NewLanguage.constraints.SubstitutionEvent_Constraints$RD2$1" />
+      <unit id="799745762874014816" at="29,0,52,0" name="NewLanguage.constraints.SubstitutionEvent_Constraints$RD1" />
+      <unit id="16353830081149272065" at="52,0,75,0" name="NewLanguage.constraints.SubstitutionEvent_Constraints$RD2" />
+      <unit id="799745762873998937" at="22,0,87,0" name="NewLanguage.constraints.SubstitutionEvent_Constraints" />
     </file>
   </root>
 </debug-info>
