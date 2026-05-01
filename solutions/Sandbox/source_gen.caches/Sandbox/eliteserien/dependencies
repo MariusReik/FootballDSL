@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
   <uses language="l:6f6e896b-7f4e-4a19-a67b-a97c3b6db988:NewLanguage" />
-  <uses module="42bd3c80-27ce-4842-931c-d06891e2d1d6(Sandbox)" kind="dp" />
 </dependenciesRoot>
 

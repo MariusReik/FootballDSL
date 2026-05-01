@@ -131,7 +131,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   }
   private static ConceptDescriptor createDescriptorForLeague() {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("NewLanguage", "League", 0x6f6e896b7f4e4a19L, 0xa67ba97c3b6db988L, 0x641a60953b5b8decL);
-    b.class_(false, false, false);
+    b.class_(false, false, true);
     b.origin("r:ea0e6bf2-d859-4aa5-af01-b61d56d17ba2(NewLanguage.structure)/7213183947249520108");
     b.version(3);
     b.property("season", 0x641a60953b5b8deeL).type(PrimitiveTypeId.STRING).origin("7213183947249520110").done();
@@ -140,7 +140,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   }
   private static ConceptDescriptor createDescriptorForMatch() {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("NewLanguage", "Match", 0x6f6e896b7f4e4a19L, 0xa67ba97c3b6db988L, 0x3dd882b35766f42cL);
-    b.class_(false, false, false);
+    b.class_(false, false, true);
     b.origin("r:ea0e6bf2-d859-4aa5-af01-b61d56d17ba2(NewLanguage.structure)/4456455538060227628");
     b.version(3);
     b.property("date", 0x3dd882b35766f431L).type(PrimitiveTypeId.STRING).origin("4456455538060227633").done();
@@ -172,9 +172,9 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   private static ConceptDescriptor createDescriptorForPlayer() {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("NewLanguage", "Player", 0x6f6e896b7f4e4a19L, 0xa67ba97c3b6db988L, 0x3dd882b35766f42fL);
     b.class_(false, false, false);
+    b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L);
     b.origin("r:ea0e6bf2-d859-4aa5-af01-b61d56d17ba2(NewLanguage.structure)/4456455538060227631");
     b.version(3);
-    b.property("name", 0x3dd882b35766f448L).type(PrimitiveTypeId.STRING).origin("4456455538060227656").done();
     b.property("number", 0x3dd882b35766f449L).type(PrimitiveTypeId.INTEGER).origin("4456455538060227657").done();
     b.property("position", 0x3dd882b35766f44bL).type(MetaIdFactory.dataTypeId(0x6f6e896b7f4e4a19L, 0xa67ba97c3b6db988L, 0x3dd882b35766f429L)).origin("4456455538060227659").done();
     return b.create();
@@ -193,9 +193,9 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   private static ConceptDescriptor createDescriptorForTeam() {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("NewLanguage", "Team", 0x6f6e896b7f4e4a19L, 0xa67ba97c3b6db988L, 0x3dd882b35766f42dL);
     b.class_(false, false, false);
+    b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L);
     b.origin("r:ea0e6bf2-d859-4aa5-af01-b61d56d17ba2(NewLanguage.structure)/4456455538060227629");
     b.version(3);
-    b.property("name", 0x3dd882b35766f43fL).type(PrimitiveTypeId.STRING).origin("4456455538060227647").done();
     b.property("abbreviation", 0x3dd882b35766f440L).type(PrimitiveTypeId.STRING).origin("4456455538060227648").done();
     b.aggregate("players", 0x3dd882b35766f442L).target(0x6f6e896b7f4e4a19L, 0xa67ba97c3b6db988L, 0x3dd882b35766f42fL).optional(true).ordered(true).multiple(true).origin("4456455538060227650").done();
     return b.create();

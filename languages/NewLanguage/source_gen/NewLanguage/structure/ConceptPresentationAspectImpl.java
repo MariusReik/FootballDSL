@@ -84,7 +84,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.Player:
         if (props_Player == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("Player");
+          cpb.presentationByName();
           props_Player = cpb.create();
         }
         return props_Player;
@@ -98,7 +98,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.Team:
         if (props_Team == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("Team");
+          cpb.presentationByName();
           props_Team = cpb.create();
         }
         return props_Team;

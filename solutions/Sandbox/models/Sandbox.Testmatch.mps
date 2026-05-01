@@ -4,7 +4,9 @@
   <languages>
     <use id="6f6e896b-7f4e-4a19-a67b-a97c3b6db988" name="NewLanguage" version="0" />
   </languages>
-  <imports />
+  <imports>
+    <import index="v8or" ref="r:4833195a-dc7a-498f-91b9-aa9d814f97f3(Sandbox.eliteserien)" />
+  </imports>
   <registry />
 </model>
 
