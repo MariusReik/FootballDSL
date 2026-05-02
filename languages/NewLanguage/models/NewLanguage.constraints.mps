@@ -29,7 +29,6 @@
       <concept id="1068431474542" name="jetbrains.mps.baseLanguage.structure.VariableDeclaration" flags="ng" index="33uBYm">
         <child id="1068431790190" name="initializer" index="33vP2m" />
       </concept>
-      <concept id="1068431790189" name="jetbrains.mps.baseLanguage.structure.Type" flags="in" index="33vP2l" />
       <concept id="1068498886296" name="jetbrains.mps.baseLanguage.structure.VariableReference" flags="nn" index="37vLTw">
         <reference id="1068581517664" name="variableDeclaration" index="3cqZAo" />
       </concept>
@@ -89,11 +88,6 @@
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ngI" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
-      </concept>
-    </language>
-    <language id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections">
-      <concept id="1151689724996" name="jetbrains.mps.baseLanguage.collections.structure.SequenceType" flags="in" index="A3Dl8">
-        <child id="1151689745422" name="elementType" index="A3Ik2" />
       </concept>
     </language>
   </registry>
@@ -192,17 +186,17 @@
       <ref role="1N5Vy1" to="wg6g:3RowFdnpX9R" resolve="playerIn" />
       <node concept="3dgokm" id="Gph8yUIFOb" role="1N6uqs">
         <node concept="3clFbS" id="Gph8yUIFOc" role="2VODD2">
-          <node concept="3cpWs8" id="SubIn0000001" role="3cqZAp">
-            <node concept="3cpWsn" id="SubIn0000002" role="3cpWs9">
+          <node concept="3cpWs8" id="ebIn0000001" role="3cqZAp">
+            <node concept="3cpWsn" id="ebIn0000002" role="3cpWs9">
               <property role="TrG5h" value="match" />
-              <node concept="3Tqbb2" id="SubIn0000003" role="1tU5fm">
+              <node concept="3Tqbb2" id="ebIn0000003" role="1tU5fm">
                 <ref role="ehGHo" to="wg6g:3RowFdnpJgG" resolve="Match" />
               </node>
-              <node concept="2OqwBi" id="SubIn0000004" role="33vP2m">
-                <node concept="2rP1CM" id="SubIn0000005" role="2Oq$k0" />
-                <node concept="2Xjw5R" id="SubIn0000006" role="2OqNvi">
-                  <node concept="1xMEDy" id="SubIn0000007" role="1xVPHs">
-                    <node concept="chp4Y" id="SubIn0000008" role="ri$Ld">
+              <node concept="2OqwBi" id="ebIn0000004" role="33vP2m">
+                <node concept="2rP1CM" id="ebIn0000005" role="2Oq$k0" />
+                <node concept="2Xjw5R" id="ebIn0000006" role="2OqNvi">
+                  <node concept="1xMEDy" id="ebIn0000007" role="1xVPHs">
+                    <node concept="chp4Y" id="ebIn0000008" role="ri$Ld">
                       <ref role="cht4Q" to="wg6g:3RowFdnpJgG" resolve="Match" />
                     </node>
                   </node>
@@ -210,42 +204,42 @@
               </node>
             </node>
           </node>
-          <node concept="3clFbJ" id="SubIn0000009" role="3cqZAp">
-            <node concept="3clFbS" id="SubIn000000A" role="3clFbx">
-              <node concept="3cpWs6" id="SubIn000000B" role="3cqZAp">
-                <node concept="10Nm6u" id="SubIn000000C" role="3cqZAk" />
+          <node concept="3clFbJ" id="ebIn0000009" role="3cqZAp">
+            <node concept="3clFbS" id="ebIn000000A" role="3clFbx">
+              <node concept="3cpWs6" id="ebIn000000B" role="3cqZAp">
+                <node concept="10Nm6u" id="ebIn000000C" role="3cqZAk" />
               </node>
             </node>
-            <node concept="3clFbC" id="SubIn000000D" role="3clFbw">
-              <node concept="10Nm6u" id="SubIn000000E" role="3uHU7w" />
-              <node concept="37vLTw" id="SubIn000000F" role="3uHU7B">
-                <ref role="3cqZAo" node="SubIn0000002" resolve="match" />
+            <node concept="3clFbC" id="ebIn000000D" role="3clFbw">
+              <node concept="10Nm6u" id="ebIn000000E" role="3uHU7w" />
+              <node concept="37vLTw" id="ebIn000000F" role="3uHU7B">
+                <ref role="3cqZAo" node="ebIn0000002" resolve="match" />
               </node>
             </node>
           </node>
-          <node concept="3cpWs6" id="SubIn000000G" role="3cqZAp">
-            <node concept="jnX$h" id="SubIn000000H" role="3cqZAk">
+          <node concept="3cpWs6" id="ebIn000000G" role="3cqZAp">
+            <node concept="jnX$h" id="ebIn000000H" role="3cqZAk">
               <ref role="jnX$i" to="wg6g:3RowFdnpJgJ" resolve="Player" />
             </node>
           </node>
         </node>
       </node>
     </node>
-    <node concept="1N5Pfh" id="SubOut000001" role="1Mr941">
+    <node concept="1N5Pfh" id="ebOut000001" role="1Mr941">
       <ref role="1N5Vy1" to="wg6g:3RowFdnpX9Q" resolve="playerOut" />
-      <node concept="3dgokm" id="SubOut000002" role="1N6uqs">
-        <node concept="3clFbS" id="SubOut000003" role="2VODD2">
-          <node concept="3cpWs8" id="SubOut000004" role="3cqZAp">
-            <node concept="3cpWsn" id="SubOut000005" role="3cpWs9">
+      <node concept="3dgokm" id="ebOut000002" role="1N6uqs">
+        <node concept="3clFbS" id="ebOut000003" role="2VODD2">
+          <node concept="3cpWs8" id="ebOut000004" role="3cqZAp">
+            <node concept="3cpWsn" id="ebOut000005" role="3cpWs9">
               <property role="TrG5h" value="match" />
-              <node concept="3Tqbb2" id="SubOut000006" role="1tU5fm">
+              <node concept="3Tqbb2" id="ebOut000006" role="1tU5fm">
                 <ref role="ehGHo" to="wg6g:3RowFdnpJgG" resolve="Match" />
               </node>
-              <node concept="2OqwBi" id="SubOut000007" role="33vP2m">
-                <node concept="2rP1CM" id="SubOut000008" role="2Oq$k0" />
-                <node concept="2Xjw5R" id="SubOut000009" role="2OqNvi">
-                  <node concept="1xMEDy" id="SubOut00000A" role="1xVPHs">
-                    <node concept="chp4Y" id="SubOut00000B" role="ri$Ld">
+              <node concept="2OqwBi" id="ebOut000007" role="33vP2m">
+                <node concept="2rP1CM" id="ebOut000008" role="2Oq$k0" />
+                <node concept="2Xjw5R" id="ebOut000009" role="2OqNvi">
+                  <node concept="1xMEDy" id="ebOut00000A" role="1xVPHs">
+                    <node concept="chp4Y" id="ebOut00000B" role="ri$Ld">
                       <ref role="cht4Q" to="wg6g:3RowFdnpJgG" resolve="Match" />
                     </node>
                   </node>
@@ -253,21 +247,21 @@
               </node>
             </node>
           </node>
-          <node concept="3clFbJ" id="SubOut00000C" role="3cqZAp">
-            <node concept="3clFbS" id="SubOut00000D" role="3clFbx">
-              <node concept="3cpWs6" id="SubOut00000E" role="3cqZAp">
-                <node concept="10Nm6u" id="SubOut00000F" role="3cqZAk" />
+          <node concept="3clFbJ" id="ebOut00000C" role="3cqZAp">
+            <node concept="3clFbS" id="ebOut00000D" role="3clFbx">
+              <node concept="3cpWs6" id="ebOut00000E" role="3cqZAp">
+                <node concept="10Nm6u" id="ebOut00000F" role="3cqZAk" />
               </node>
             </node>
-            <node concept="3clFbC" id="SubOut00000G" role="3clFbw">
-              <node concept="10Nm6u" id="SubOut00000H" role="3uHU7w" />
-              <node concept="37vLTw" id="SubOut00000I" role="3uHU7B">
-                <ref role="3cqZAo" node="SubOut000005" resolve="match" />
+            <node concept="3clFbC" id="ebOut00000G" role="3clFbw">
+              <node concept="10Nm6u" id="ebOut00000H" role="3uHU7w" />
+              <node concept="37vLTw" id="ebOut00000I" role="3uHU7B">
+                <ref role="3cqZAo" node="ebOut000005" resolve="match" />
               </node>
             </node>
           </node>
-          <node concept="3cpWs6" id="SubOut00000J" role="3cqZAp">
-            <node concept="jnX$h" id="SubOut00000K" role="3cqZAk">
+          <node concept="3cpWs6" id="ebOut00000J" role="3cqZAp">
+            <node concept="jnX$h" id="ebOut00000K" role="3cqZAk">
               <ref role="jnX$i" to="wg6g:3RowFdnpJgJ" resolve="Player" />
             </node>
           </node>

@@ -75,6 +75,38 @@
       <property role="1EJBrw" value="0" />
       <ref role="1EJBr_" to="v8or:7eli000000J" resolve="SK Brann" />
     </node>
+    <node concept="1EJBrt" id="7jJ4GIZ0vGD" role="1EJBq9">
+      <property role="1EJBr3" value="3RowFdnpJic/SECOND_HALF_START" />
+      <property role="1EJBry" value="45" />
+      <property role="1EJBrw" value="0" />
+      <ref role="1EJBr_" to="v8or:7eli000000J" resolve="SK Brann" />
+    </node>
+    <node concept="1EJBrC" id="7jJ4GIZ0vGG" role="1EJBq9">
+      <property role="1EJBry" value="49" />
+      <property role="1EJBrw" value="12" />
+      <ref role="1EJBr_" to="v8or:7eli0000002" resolve="Bodø/Glimt" />
+      <ref role="1EJBr$" to="v8or:7eli000000D" resolve="Håkon Evjen" />
+    </node>
+    <node concept="1EJP36" id="7jJ4GIZ0vGJ" role="1EJBq9">
+      <property role="1EJBry" value="59" />
+      <property role="1EJBrw" value="45" />
+      <ref role="1EJP35" to="v8or:7eli000000S" resolve="Felix Horn Myhre" />
+      <ref role="1EJBr_" to="v8or:7eli000000J" resolve="SK Brann" />
+      <ref role="1EJP34" to="v8or:7eli000000X" resolve="Kristall Ingason" />
+    </node>
+    <node concept="1EJBrg" id="7jJ4GIZ0vGP" role="1EJBq9">
+      <property role="1EJBrm" value="3RowFdnpJhW/Red" />
+      <property role="1EJBry" value="75" />
+      <property role="1EJBrw" value="51" />
+      <ref role="1EJBr_" to="v8or:7eli0000002" resolve="Bodø/Glimt" />
+      <ref role="1EJBr$" to="v8or:7eli000000G" resolve="Ole Didrik Blomberg" />
+    </node>
+    <node concept="1EJBrC" id="7jJ4GIZ0vGS" role="1EJBq9">
+      <property role="1EJBry" value="79" />
+      <property role="1EJBrw" value="37" />
+      <ref role="1EJBr_" to="v8or:7eli000000J" resolve="SK Brann" />
+      <ref role="1EJBr$" to="v8or:7eli000000T" resolve="Ulrik Mathisen" />
+    </node>
   </node>
 </model>
 

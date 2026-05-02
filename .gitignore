@@ -1,0 +1,14 @@
+# MPS generated artifacts
+**/classes_gen/
+**/source_gen/
+**/source_gen.caches/
+
+# IDE local state
+.idea/workspace.xml
+.idea/usage.statistics.xml
+.idea/shelf/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
