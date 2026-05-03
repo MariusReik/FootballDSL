@@ -1,0 +1,414 @@
+# FootballDSL Editor MVP
+
+This document turns the editor idea into a concrete MPS implementation target.
+
+The goal of the MVP is a guided annotation workbench where the annotator:
+
+1. selects a fixture
+2. clicks an event widget
+3. fills in minute and event details from filtered dropdowns
+4. sees the event appear in a live timeline
+
+For this MVP, time should be minute-first.
+
+- `minute` is the primary annotation field
+- `second` stays in the legacy event model for compatibility, but new session work can leave it empty or `0`
+
+## Design Choice
+
+The DSL should stay MPS-native.
+
+Instead of editing a raw `Match` root directly, the annotator should open a dedicated root concept:
+
+- `LiveAnnotationSession`
+
+This gives us one place for:
+
+- selected fixture
+- derived match metadata
+- the editable event list
+- future validation and export status
+
+## Concepts
+
+The current language already has:
+
+- `League`
+- `Match`
+- `Team`
+- `Player`
+- `Event`
+- `GoalEvent`
+- `CardEvent`
+- `PeriodEvent`
+- `FoulEvent`
+- `OffsideEvent`
+- `SubstitutionEvent`
+
+The MVP should add these concepts:
+
+### `FixtureCatalog`
+
+Root concept.
+
+Purpose:
+
+- holds imported fixtures for one test dataset
+
+Properties:
+
+- `sourceName : string`
+
+Children:
+
+- `fixtures : Fixture[0..n]`
+
+### `Fixture`
+
+Rootable or contained under `FixtureCatalog`.
+
+Purpose:
+
+- a parsed JSON fixture that can be selected by the annotator
+
+Properties:
+
+- `fixtureId : string`
+- `date : string`
+- `kickoff : string`
+- `venue : string`
+- `competition : string`
+- `season : string`
+
+References:
+
+- `homeTeam : Team[1]`
+- `awayTeam : Team[1]`
+
+### `LiveAnnotationSession`
+
+Root concept.
+
+Purpose:
+
+- the annotator-facing workbench
+
+Properties:
+
+- `title : string`
+- `status : string`
+
+References:
+
+- `fixture : Fixture[1]`
+
+Children:
+
+- `events : Event[0..n]`
+
+Notes:
+
+- `title` can be auto-filled as `"Brann vs Bodo/Glimt"`
+- `status` can be a simple string for now: `draft`, `in_progress`, `complete`
+
+## Reuse Of Existing Concepts
+
+Keep the existing event concepts and reuse them inside `LiveAnnotationSession.events`.
+
+The current event model already covers the MVP:
+
+- `Event`
+  - `minute`
+  - `second`
+  - `team`
+  - `player`
+- `GoalEvent`
+  - `assistBy`
+- `CardEvent`
+  - `cardType`
+- `PeriodEvent`
+  - `periodType`
+- `FoulEvent`
+  - `fouledPlayer`
+- `OffsideEvent`
+- `SubstitutionEvent`
+  - `playerOut`
+  - `playerIn`
+
+## Editor Layout
+
+The main editor should target `LiveAnnotationSession`.
+
+Use a vertical layout with four sections.
+
+### 1. Fixture Header
+
+Shows the selected fixture and readonly context:
+
+```text
+Session: [ title ]
+Fixture: [ fixture dropdown ]
+
+Home: SK Brann      Away: Bodo/Glimt
+Venue: Brann Stadion
+Date: 2026-03-29
+```
+
+Implementation notes:
+
+- the `fixture` reference should use a dropdown-like reference editor
+- once selected, team and venue cells should read from the referenced `Fixture`
+- if no fixture is selected, show a placeholder message:
+  - `Select a fixture to begin annotation`
+
+### 2. Event Widget Row
+
+This is the main action strip:
+
+```text
+[ Goal ] [ Card ] [ Foul ] [ Offside ] [ Substitution ] [ Period ]
+```
+
+Each widget creates a child in `events` and immediately moves the caret into the new event form.
+
+Implementation notes:
+
+- use transformation menu actions or intention-style actions
+- each button should append the corresponding event concept
+- the new event should be initialized with:
+  - `minute = 0`
+  - `second = 0`
+  - `team = fixture.homeTeam` as a temporary default
+
+### 3. Active Event Form
+
+When the caret is inside an event, show an expanded form-style editor for that event.
+
+Base event fields first:
+
+```text
+Minute: [ minute ]
+Team: [ dropdown ]
+```
+
+Then event-specific fields.
+
+#### GoalEvent
+
+```text
+Minute: [ minute ]
+Team: [ dropdown ]
+Scorer: [ player dropdown ]
+Assist: [ player dropdown ]
+```
+
+#### CardEvent
+
+```text
+Minute: [ minute ]
+Team: [ dropdown ]
+Player: [ player dropdown ]
+Card: [ Yellow | Red | Second Yellow ]
+```
+
+#### FoulEvent
+
+```text
+Minute: [ minute ]
+Team: [ dropdown ]
+Offender: [ player dropdown ]
+Fouled player: [ player dropdown ]
+```
+
+#### OffsideEvent
+
+```text
+Minute: [ minute ]
+Team: [ dropdown ]
+Player: [ player dropdown ]
+```
+
+#### SubstitutionEvent
+
+```text
+Minute: [ minute ]
+Team: [ dropdown ]
+Player out: [ player dropdown ]
+Player in: [ player dropdown ]
+```
+
+#### PeriodEvent
+
+```text
+Minute: [ minute ]
+Team: [ dropdown ]
+Period: [ FIRST_HALF_START | FIRST_HALF_END | SECOND_HALF_START | SECOND_HALF_END | ... ]
+```
+
+### 4. Timeline
+
+The bottom section is the event list for the whole session.
+
+Compact row style:
+
+```text
+00:00  BRN  Period         FIRST_HALF_START
+12:14  BRN  Card           Jacob Lungi Sorensen  Yellow
+27:58  BRN  Goal           Felix Horn Myhre      assist Bard Finne
+37:34  BOD  Substitution   Hakon Evjen -> Jostein Gundersen
+```
+
+Implementation notes:
+
+- start with a simple vertical collection
+- later this can be upgraded to MPS Extensions `tables`
+
+## Scoping Rules
+
+The editor UX depends on filtered reference scopes.
+
+### Fixture scope
+
+`LiveAnnotationSession.fixture` should resolve only to `Fixture` roots visible in the model or imported models.
+
+### Team scope
+
+For every `Event.team`, only allow:
+
+- `session.fixture.homeTeam`
+- `session.fixture.awayTeam`
+
+### Player scope
+
+For `Event.player`, only allow players from `Event.team`.
+
+### Goal assist scope
+
+For `GoalEvent.assistBy`, only allow players from `GoalEvent.team`.
+
+### Foul victim scope
+
+For `FoulEvent.fouledPlayer`, prefer players from the opposite team.
+
+For the MVP, if opposite-team scoping is awkward, allow all players from both fixture teams and refine later.
+
+### Substitution scope
+
+For:
+
+- `SubstitutionEvent.playerOut`
+- `SubstitutionEvent.playerIn`
+
+only allow players from `SubstitutionEvent.team`.
+
+## Editor Components
+
+To keep the editor maintainable, define reusable editor components for:
+
+- `FixtureSummary`
+- `EventTimeFields`
+- `EventTeamField`
+- `PlayerReferenceField`
+- `TimelineRow`
+
+That gives each event editor a small amount of custom logic instead of duplicating the same cells.
+
+## Suggested MPS Build Order
+
+### Stage 1
+
+Add structure for:
+
+- `FixtureCatalog`
+- `Fixture`
+- `LiveAnnotationSession`
+
+### Stage 2
+
+Implement reference scopes for:
+
+- fixture
+- team
+- player
+- assistBy
+- playerIn
+- playerOut
+
+### Stage 3
+
+Create a minimal `LiveAnnotationSession` editor:
+
+- fixture selector
+- event list
+
+### Stage 4
+
+Add event widget actions:
+
+- Goal
+- Card
+- Foul
+- Offside
+- Substitution
+- Period
+
+### Stage 5
+
+Refine the event editors into form-style projections.
+
+## Test Fixture Contract
+
+The first fixture should come from JSON with this shape:
+
+```json
+{
+  "fixtureId": "brn-bod-2026-03-29",
+  "date": "2026-03-29",
+  "kickoff": "17:00",
+  "venue": "Brann Stadion",
+  "competition": "Eliteserien",
+  "season": "2026",
+  "homeTeam": {
+    "name": "SK Brann",
+    "abbreviation": "BRN",
+    "players": []
+  },
+  "awayTeam": {
+    "name": "Bodo/Glimt",
+    "abbreviation": "BOD",
+    "players": []
+  }
+}
+```
+
+The repository now includes a concrete sample fixture JSON that fits this contract:
+
+- [test_fixture.json](C:/Users/lyder/OneDrive/Dokumenter/GitHub/FootballDSL/scripts/test_fixture.json)
+- [generate_fixture_models.py](C:/Users/lyder/OneDrive/Dokumenter/GitHub/FootballDSL/scripts/generate_fixture_models.py)
+
+## Implementation Notes For This Repository
+
+These files are the main starting points:
+
+- [NewLanguage.structure.mps](C:/Users/lyder/OneDrive/Dokumenter/GitHub/FootballDSL/languages/NewLanguage/models/NewLanguage.structure.mps)
+- [NewLanguage.constraints.mps](C:/Users/lyder/OneDrive/Dokumenter/GitHub/FootballDSL/languages/NewLanguage/models/NewLanguage.constraints.mps)
+- [NewLanguage.editor.mps](C:/Users/lyder/OneDrive/Dokumenter/GitHub/FootballDSL/languages/NewLanguage/models/NewLanguage.editor.mps)
+
+Current state:
+
+- structure is already strong enough for events
+- constraints already define basic scopes for `team`, `player`, `playerIn`, and `playerOut`
+- fixture and session seed models can now be generated from JSON
+- editor aspect is still empty, which makes it the correct place to build the MVP next
+
+## First Concrete Goal
+
+The first working milestone should be:
+
+1. open a `LiveAnnotationSession`
+2. choose `brn-bod-2026-03-29`
+3. click `Goal`
+4. pick minute, team, scorer, assister
+5. see the event appear in the timeline
+
+If that path works, the rest of the event widgets can follow the same pattern.
