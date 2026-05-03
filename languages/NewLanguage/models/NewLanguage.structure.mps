@@ -311,5 +311,105 @@
       <ref role="20lvS9" node="3RowFdnpJgH" resolve="Team" />
     </node>
   </node>
+  <node concept="1TIwiD" id="4S61$FJASva">
+    <property role="EcuMT" value="5622188103735936970" />
+    <property role="TrG5h" value="Fixture" />
+    <property role="19KtqR" value="true" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="PrWs8" id="4S61$FJASvb" role="PzmwI">
+      <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
+    </node>
+    <node concept="1TJgyi" id="4S61$FJASvc" role="1TKVEl">
+      <property role="IQ2nx" value="5622188103735936972" />
+      <property role="TrG5h" value="fixtureId" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
+    </node>
+    <node concept="1TJgyi" id="4S61$FJASvd" role="1TKVEl">
+      <property role="IQ2nx" value="5622188103735936973" />
+      <property role="TrG5h" value="date" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
+    </node>
+    <node concept="1TJgyi" id="4S61$FJASve" role="1TKVEl">
+      <property role="IQ2nx" value="5622188103735936974" />
+      <property role="TrG5h" value="kickoff" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
+    </node>
+    <node concept="1TJgyi" id="4S61$FJASvf" role="1TKVEl">
+      <property role="IQ2nx" value="5622188103735936975" />
+      <property role="TrG5h" value="venue" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
+    </node>
+    <node concept="1TJgyi" id="4S61$FJASvg" role="1TKVEl">
+      <property role="IQ2nx" value="5622188103735936976" />
+      <property role="TrG5h" value="competition" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
+    </node>
+    <node concept="1TJgyi" id="4S61$FJASvh" role="1TKVEl">
+      <property role="IQ2nx" value="5622188103735936977" />
+      <property role="TrG5h" value="season" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
+    </node>
+    <node concept="1TJgyj" id="4S61$FJASvi" role="1TKVEi">
+      <property role="IQ2ns" value="5622188103735936978" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="homeTeam" />
+      <property role="20lbJX" value="fLJekj4/_1" />
+      <ref role="20lvS9" node="3RowFdnpJgH" resolve="Team" />
+    </node>
+    <node concept="1TJgyj" id="4S61$FJASvj" role="1TKVEi">
+      <property role="IQ2ns" value="5622188103735936979" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="awayTeam" />
+      <property role="20lbJX" value="fLJekj4/_1" />
+      <ref role="20lvS9" node="3RowFdnpJgH" resolve="Team" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="4S61$FJASvm">
+    <property role="EcuMT" value="5622188103735936982" />
+    <property role="TrG5h" value="LiveAnnotationSession" />
+    <property role="19KtqR" value="true" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="PrWs8" id="4S61$FJASvn" role="PzmwI">
+      <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
+    </node>
+    <node concept="1TJgyi" id="4S61$FJASvo" role="1TKVEl">
+      <property role="IQ2nx" value="5622188103735936984" />
+      <property role="TrG5h" value="status" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
+    </node>
+    <node concept="1TJgyj" id="4S61$FJASvp" role="1TKVEi">
+      <property role="IQ2ns" value="5622188103735936985" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="events" />
+      <property role="20lbJX" value="fLJekj5/_0__n" />
+      <ref role="20lvS9" node="3RowFdnpJhe" resolve="Event" />
+    </node>
+    <node concept="1TJgyj" id="4S61$FJASvq" role="1TKVEi">
+      <property role="IQ2ns" value="5622188103735936986" />
+      <property role="20kJfa" value="fixture" />
+      <ref role="20lvS9" node="4S61$FJASva" resolve="Fixture" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="4S61$FJASvs">
+    <property role="EcuMT" value="5622188103735936988" />
+    <property role="TrG5h" value="FixtureCatalog" />
+    <property role="19KtqR" value="true" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="PrWs8" id="4S61$FJASvt" role="PzmwI">
+      <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
+    </node>
+    <node concept="1TJgyi" id="4S61$FJASvu" role="1TKVEl">
+      <property role="IQ2nx" value="5622188103735936990" />
+      <property role="TrG5h" value="sourceName" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
+    </node>
+    <node concept="1TJgyj" id="4S61$FJASvv" role="1TKVEi">
+      <property role="IQ2ns" value="5622188103735936991" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="fixtures" />
+      <property role="20lbJX" value="fLJekj5/_0__n" />
+      <ref role="20lvS9" node="4S61$FJASva" resolve="Fixture" />
+    </node>
+  </node>
 </model>
 
