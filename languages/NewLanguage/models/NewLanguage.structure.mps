@@ -411,5 +411,15 @@
       <ref role="20lvS9" node="4S61$FJASva" resolve="Fixture" />
     </node>
   </node>
+  <node concept="1TIwiD" id="1Z2zFyi6Zvf">
+    <property role="EcuMT" value="2288548484034066383" />
+    <property role="TrG5h" value="ShotEvent" />
+    <ref role="1TJDcQ" node="3RowFdnpJhe" resolve="Event" />
+    <node concept="1TJgyi" id="1Z2zFyi6ZB9" role="1TKVEl">
+      <property role="IQ2nx" value="2288548484034066889" />
+      <property role="TrG5h" value="onTarget" />
+      <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
+    </node>
+  </node>
 </model>
 

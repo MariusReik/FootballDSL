@@ -107,6 +107,13 @@
       <ref role="1EJBr_" to="v8or:7eli000000J" resolve="SK Brann" />
       <ref role="1EJBr$" to="v8or:7eli000000T" resolve="Ulrik Mathisen" />
     </node>
+    <node concept="1EJP36" id="6vlm_pBL014" role="1EJBq9">
+      <property role="1EJBry" value="-1" />
+      <property role="1EJBrw" value="12" />
+      <ref role="1EJP35" to="v8or:7eli000000Y" resolve="Bård Finne" />
+      <ref role="1EJP34" to="v8or:7eli000000I" resolve="Andreas Helmersen" />
+      <ref role="1EJBr_" to="v8or:7eli000000J" resolve="SK Brann" />
+    </node>
   </node>
 </model>
 
