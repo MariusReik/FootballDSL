@@ -575,7 +575,42 @@ function addEvent(typeName) {
 }
 
 function updateEvent(idx, field, value) {
-  matchData.events[idx][field] = value;
+  const event = matchData.events[idx];
+
+  event[field] = value;
+
+  // Auto-fill team from any player reference
+  if (value && typeof value === "object" && value.team) {
+
+    const isPlayerReference =
+      field === "player" ||
+      field === "playerIn" ||
+      field === "playerOut" ||
+      field === "assistBy";
+
+    if (isPlayerReference) {
+
+      // Own goal special handling
+      if (
+        event.type === "GoalEvent" &&
+        event.isOwnGoal === true &&
+        field === "player"
+      ) {
+        event.team = value.team === "home" ? "away" : "home";
+      } else {
+        event.team = value.team;
+      }
+    }
+  }
+
+  // Recalculate if own-goal toggle changes
+  if (field === "isOwnGoal" && event.player) {
+    event.team =
+      value === true
+        ? (event.player.team === "home" ? "away" : "home")
+        : event.player.team;
+  }
+
   renderEvents();
   updateExport();
 }
