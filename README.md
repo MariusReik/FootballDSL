@@ -21,7 +21,6 @@ Authors: Marius Reikerås, Lyder Samnøy
   - `annotator.html` — drag-and-drop web editor; uses
     `metamodel.js` and `teams.js` to mirror the MPS metamodel
 - `data/eliteserien.db` — SQLite source for the league rosters
-- `paper/paper.tex` — the LNCS-style project report
 
 ## Quick start
 
