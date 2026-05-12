@@ -209,11 +209,6 @@
       <property role="TrG5h" value="minute" />
       <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
     </node>
-    <node concept="1TJgyi" id="3RowFdnpJhj" role="1TKVEl">
-      <property role="IQ2nx" value="4456455538060227667" />
-      <property role="TrG5h" value="second" />
-      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
-    </node>
     <node concept="1TJgyj" id="3RowFdnpJhm" role="1TKVEi">
       <property role="IQ2ns" value="4456455538060227670" />
       <property role="20kJfa" value="team" />
